@@ -1,6 +1,8 @@
 <?php
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         echo('halo');
+        
+        //mira si es singup o singin
         if($_POST['method'] == 'signup'){
             echo('singup');
             crearusuari();
@@ -49,7 +51,7 @@
             header("Location: index.php");
         }
     }
-
+//comproba si l'usuari es correcte
     function comprobarusuari(){
         $gmail = $_POST['email'];
         $contrasenya = $_POST['pwd'];
@@ -69,7 +71,7 @@
             header("Location: index.php");
         }
     }
-
+// obte el nom per mostrarlo en hola.php
     function mostrarnom($nom){
         echo($_POST['nom']);
         return "Hola".$_POST['nom'].", les teves darreres connexions són: ";
